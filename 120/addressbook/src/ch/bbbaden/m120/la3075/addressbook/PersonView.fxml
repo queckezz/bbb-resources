@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.bbbaden.m120.la3075.adressbook.PersonViewController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="180.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <GridPane prefHeight="90.0" prefWidth="274.0" VBox.vgrow="ALWAYS">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="First Name">
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                  </Label>
+                  <Label text="Last Name" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                  </Label>
+                  <Label text="PLZ" GridPane.rowIndex="2">
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="firstNameInput" GridPane.columnIndex="1" />
+                  <TextField fx:id="lastNameInput" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="plzInput" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <HBox alignment="BOTTOM_RIGHT">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onOk" text="Ok">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onCancel" text="Cancel" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</AnchorPane>

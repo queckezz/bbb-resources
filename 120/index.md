@@ -97,7 +97,7 @@ public class Personen {
 }
 ```
 
-## Dialogs
+## dialogs
 
 ```java
 // function to create information dialogs easily
@@ -109,17 +109,42 @@ static private void showInfoDialog(String headerText) {
 }
 ```
 
+### pass information across stages
 
+Where `person` is the information:
 
-## CSS
+```java
+private boolean initPersonViewDialog (Person person) throws IOException {
+  FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("View.fxml"));
+  Parent root = (Parent) fxmlLoader.load();
+  PersonViewController controller = fxmlLoader.getController();
+  Stage stage = new Stage();
+  stage.setScene(new Scene(root));
 
-### Load
+  // delegate to the controller the selected person so that it can be
+  // displayed in the new view
+  controller.setPerson(person);
+
+  // set the stage so we can close the dialog from the controller
+  controller.setStage(stage);
+
+  // Show the dialog and wait until the user closes it
+  stage.showAndWait();
+
+  // return whether we want to commit/edit the person or not
+  return controller.isCommitted();
+}
+```
+
+## css
+
+### load
 
 Set the `.css` file in the scene builder under `Properties -> Stylesheets`. The path should be relative to the given `.fxml` scene:
 
-![stylesheets imprt](./imgs/stylesheets-import.png)
+![stylesheets import](./assets/stylesheets-import.png)
 
-### Example
+### example
 
 Whereas as `.root` is always tied to the upmost scene.
 
@@ -204,6 +229,16 @@ public class MainController implements Initializable {
 }
 ```
 
+### on selection change, call function
+
+```java
+tableView
+  .getSelectionModel().
+  selectedItemProperty()
+  .addListener((obs, oldValue, newValue) -> {
+    someFunction(newValue);
+  });
+```
 ### get current selection index
 
 ```java

@@ -1,6 +1,8 @@
 
 # module 120 docs
 
+[TOC]
+
 ## get controller from a given resource
 
 In a given controller:

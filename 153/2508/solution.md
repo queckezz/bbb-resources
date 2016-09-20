@@ -1,10 +1,17 @@
 
-# Was ist schneller: Eine Query mit where auf „id“ oder auf „number“?
+Query with the primary key is a lot faster. This is probably because the id is unique where the ``
 
-# Wie ist es, nachdem Sie einen Primary Key einfügen?
+```sql
+select * from benchmarktable where id = 2000;
+/* -> 0.00s */
 
-# Ein LIKE mit % zu Beginn oder % am Schluss? Mit oder ohne Index?
+select * from benchmarktable where number = 2000;
+/* -> 0.22s */
+```
 
-# Mit oder ohne Index auf „number“?
+After the index `create-index.sql` on column `number` applied:
 
-# Mit und ohne Index bei „order by“?
+```sql
+select * from benchmarktable where number = 2000;
+/* -> 0.00s */
+```

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h1>Sitzungsverfolgung Schritt 1</h1>
+        <p>Willkommen. Hier wird ihre Sitzung eröffnet! #{cookie["JSESSIONID"].value}</p>
+        
+        <h:form prependId="false">
+            Name:
+
+            <h:inputText id="name"
+                value="#{session_tracking.name}" 
+                required="true" 
+                requiredMessage="Du musst einen Namen eingeben" />
+            <h:message for="name"/>
+            
+            <h:commandButton 
+                value="Submit Query" 
+                action="#{session_tracking.saveName}"/>
+        </h:form>
+    </h:body>
+</html>
+

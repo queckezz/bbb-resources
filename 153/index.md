@@ -49,3 +49,31 @@ In der [objektorientierten Programmierung](https://de.wikipedia.org/wiki/Objekt
 * https://de.wikipedia.org/wiki/Kardinalität_(Datenbankmodellierung)
 * http://www.sqldocu.com/nine/relationship.htm
 * http://stackoverflow.com/questions/762937/whats-the-difference-between-identifying-and-non-identifying-relationships
+
+## Referentielle Integrität
+
+Nach der RI-Regel dürfen Datensätze (über ihre [Fremdschlüssel](https://de.wikipedia.org/wiki/Fremdschl%C3%BCssel)) nur auf existierende Datensätze verweisen
+
+Danach besteht die RI grundsätzlich aus zwei Teilen:
+
+1. Ein neuer Datensatz mit einem Fremdschlüssel kann nur dann in einer Tabelle eingefügt werden, wenn in der referenzierten Tabelle ein Datensatz mit entsprechendem Wert im [Primärschlüssel](https://de.wikipedia.org/wiki/Schl%C3%BCssel_(Datenbank)#Prim.C3.A4rschl.C3.BCssel_und_Alternativschl.C3.BCssel) oder einem eindeutigen [Alternativschlüssel](https://de.wikipedia.org/wiki/Schl%C3%BCssel_(Datenbank)#Prim.C3.A4rschl.C3.BCssel_und_Alternativschl.C3.BCssel) existiert.
+2. Eine Datensatzlöschung oder Änderung des [Schlüssels](https://de.wikipedia.org/wiki/Schl%C3%BCssel_(Datenbank)) in einem Primär-Datensatz ist nur möglich, wenn zu diesem Datensatz keine abhängigen Datensätze in Beziehung stehen.
+
+### Constraints
+
+* `CASCADE` will propagate the change when the parent changes. (If you delete a row, rows in constrained tables that reference that row will also be deleted, etc.)
+* `SET NULL` sets the column value to NULL when a parent row goes away.
+* `RESTRICT` causes the attempted DELETE of a parent row to fail.
+
+## Business Rules
+
+Logische Bedingungen an die DB.
+
+|            | Kunde | Bestellung | Artikel |
+| ---------- | ----- | ---------- | ------- |
+| Kunde      |       | C1         |         |
+| Bestellung |       |            | C2      |
+| Artikel    |       |            |         |
+
+* **C1**: Eine Bestellung muss man immer einen Kunden zugeordnet sein.
+* **C2**: Eine Bestellung muss mindestens einen Artikel umfassen.

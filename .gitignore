@@ -15,3 +15,5 @@ nb-configuration.xml
 *.jar
 *.war
 *.ear
+/133/HelloWorldApp/target/
+/133/Sitzungsverfolgung/target/

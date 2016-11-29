@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+        <style>
+            label, input { display: block }
+        </style>
+    </h:head>
+    <h:body>
+        <h:outputLink value="#{request.contextPath}/faces/secured/welcome.xhtml">
+            <h:outputText value="Secure Welcome Page" />
+        </h:outputLink>
+        <h:form>
+            <h:outputLabel value="Username: "></h:outputLabel>
+            <h:inputText value="#{loginBean.inputUsername}"></h:inputText>
+            
+            <h:outputLabel value="Password: "></h:outputLabel>
+            <h:inputSecret value="#{loginBean.inputPassword}"></h:inputSecret>
+            
+            <h:commandButton value="Einloggen" action="#{loginBean.login}"></h:commandButton>
+        </h:form>
+    </h:body>
+</html>
+

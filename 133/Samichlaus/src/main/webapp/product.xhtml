@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <head>
+        <title>Facelet Title</title>
+        <link rel="stylesheet" href="https://unpkg.com/tachyons@4.5.5/css/tachyons.min.css"/>
+    </head>
+    <body>
+        <div class="center mw6">
+            <h1>#{rootBean.selectedProduct.name}</h1>
+            <p>#{rootBean.selectedProduct.description}</p>
+            <img src="#{rootBean.selectedProduct.link}" />
+        </div>
+    </body>
+</html>
+

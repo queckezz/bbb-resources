@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+    <product>
+        <link>http://lorempixel.com/500/500/cats/</link>
+        <name>Product 1</name>
+        <description>Product description</description>
+    </product>
+
+    <product>
+        <link>http://lorempixel.com/500/500/sports/</link>
+        <name>Product 2</name>
+        <description>Product description</description>
+    </product>
+
+    <product>
+        <link>http://lorempixel.com/500/500/fashion/</link>
+        <name>Product 3</name>
+        <description>Product description</description>
+    </product>
+    
+    <product>
+        <link>http://lorempixel.com/500/500/nature/</link>
+        <name>Product 4</name>
+        <description>Product description</description>
+    </product>                                                    
+</products>

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <head>
+        <title>Facelet Title</title>
+        <link rel="stylesheet" href="https://unpkg.com/tachyons@4.5.5/css/tachyons.min.css"/>
+    </head>
+    <body>
+        <div class="center mw8">
+            <h1>Samichlaus Wunschliste</h1>
+            <div class="flex flex-wrap">
+                <ui:repeat var="product" value="#{rootBean.products}">
+                    <div class="w-100 w-50-ns">
+                        <h2>#{product.name}</h2>
+                        <h:form>
+                            <h:commandLink action="#{rootBean.openProduct(product)}" value="View enlarged Version" />
+                        </h:form>
+                        <p>#{product.description}</p>
+                        <img src="#{product.link}" />
+                    </div>
+                </ui:repeat>
+            </div>
+        </div>
+    </body>
+</html>
+

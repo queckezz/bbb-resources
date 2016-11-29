@@ -1,0 +1,33 @@
+# m133 docs
+
+## Session
+
+```java
+public class ManagedBean implements Serializable {
+    FacesContext fCtx = FacesContext.getCurrentInstance();
+    HttpSession session = (HttpSession) fCtx.getExternalContext().getSession(false);
+    private String firstName;
+    private String lastName;
+
+    public String getSession() {
+        return session.getId();
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+}
+```
+

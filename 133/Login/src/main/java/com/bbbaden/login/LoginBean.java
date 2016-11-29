@@ -49,6 +49,13 @@ public class LoginBean implements Serializable {
     }
   }
   
+  public String logout (){
+    ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
+    ec.invalidateSession();  
+    return "/index.xhtml";
+  }
+    
+  
   public User check (String username, String password) {
     User currentUser = null;
     
@@ -62,10 +69,6 @@ public class LoginBean implements Serializable {
     return currentUser;
   }
   
-  public String logout () {
-    return "";
-  }
-
   public Boolean isLoggedIn () {
     return loggedIn;
   }

@@ -7,6 +7,10 @@
     </h:head>
     <h:body>
         <p>Willkommen #{loginBean.user.username}</p>
+        
+        <h:form>
+            <h:commandButton value="Logout" action="#{loginBean.logout}"></h:commandButton>
+        </h:form>
     </h:body>
 </html>
 

@@ -54,7 +54,6 @@ public class LoginBean implements Serializable {
     ec.invalidateSession();  
     return "/index.xhtml";
   }
-    
   
   public User check (String username, String password) {
     User currentUser = null;

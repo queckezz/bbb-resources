@@ -28,7 +28,7 @@ import javax.servlet.http.HttpServletResponse;
 public class AuthFilter implements Filter {
   
   private static final boolean debug = true;
-  
+
   @Inject
   private LoginBean loginBean;
 
@@ -44,8 +44,9 @@ public class AuthFilter implements Filter {
     throws IOException, ServletException {
     if (debug) {
       log("AuthFilter:DoBeforeProcessing");
+      System.out.println(loginBean.isLoggedIn());
     }
-    
+        
     if (loginBean == null || !loginBean.isLoggedIn()) {
       HttpServletRequest req = (HttpServletRequest) request;
       HttpServletResponse res = (HttpServletResponse) response;

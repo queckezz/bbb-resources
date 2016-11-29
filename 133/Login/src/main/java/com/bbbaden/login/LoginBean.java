@@ -9,6 +9,9 @@ import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.ArrayList;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  *
@@ -17,10 +20,10 @@ import java.util.ArrayList;
 @Named(value = "loginBean")
 @SessionScoped
 public class LoginBean implements Serializable {
-  private String username;
-  private String password;
+  private String inputUsername;
+  private String inputPassword;
   private boolean loggedIn = false;
-  private User currentUser;
+  private User user;
   
   ArrayList<User> users = new ArrayList<User>();
   
@@ -30,40 +33,60 @@ public class LoginBean implements Serializable {
   }
   
   public String login () {
+    ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
+    HttpServletRequest req = (HttpServletRequest)ec.getRequest();
+    
+    User user = check(this.inputUsername, this.inputPassword);
+    this.user = user;
+        
+    if (user == null) {
+      loggedIn = false;
+      return "/index.xhtml";
+    } else {
+      req.changeSessionId();
+      loggedIn = true;
+      return "/secured/welcome.xhtml?faces-redirect=true";
+    }
+  }
+  
+  public User check (String username, String password) {
+    User currentUser = null;
+    
     for (User user : users) {
-      if (this.username.equals(user.getUsername()) && this.password.equals(user.getPassword())) {
-        loggedIn = true;
+      if (username.equals(user.getUsername()) && password.equals(user.getPassword())) {
         currentUser = user;
         break;
-      } else {
-        loggedIn = false;
       }
     }
-    
-    if (loggedIn == true) {
-      return "/secured/welcome.xhtml?faces-redirect=true";
-    } else {
-      return "/index.xhtml";
-    }
+
+    return currentUser;
+  }
+  
+  public String logout () {
+    return "";
   }
 
   public Boolean isLoggedIn () {
     return loggedIn;
   }
-  
-  public String getUsername() {
-      return username;
+
+  public User getUser() {
+    return user;
   }
 
-  public void setUsername(String username) {
-      this.username = username;
+  public String getInputUsername() {
+    return inputUsername;
   }
 
-  public String getPassword() {
-      return password;
+  public String getInputPassword() {
+    return inputPassword;
   }
 
-  public void setPassword(String password) {
-      this.password = password;
+  public void setInputUsername(String inputUsername) {
+    this.inputUsername = inputUsername;
+  }
+
+  public void setInputPassword(String inputPassword) {
+    this.inputPassword = inputPassword;
   }
 }

@@ -14,10 +14,10 @@
         </h:outputLink>
         <h:form>
             <h:outputLabel value="Username: "></h:outputLabel>
-            <h:inputText value="#{loginBean.username}"></h:inputText>
+            <h:inputText value="#{loginBean.inputUsername}"></h:inputText>
             
             <h:outputLabel value="Password: "></h:outputLabel>
-            <h:inputSecret value="#{loginBean.password}"></h:inputSecret>
+            <h:inputSecret value="#{loginBean.inputPassword}"></h:inputSecret>
             
             <h:commandButton value="Einloggen" action="#{loginBean.login}"></h:commandButton>
         </h:form>

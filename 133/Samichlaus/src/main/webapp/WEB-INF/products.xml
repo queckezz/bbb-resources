@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <products>
     <product>
-        <link>http://lorempixel.com/500/500/cats/</link>
+        <link>https://farm4.staticflickr.com/3937/15437546888_6a6f608e9c.jpg</link>
         <name>Product 1</name>
         <description>Product description</description>
     </product>
 
     <product>
-        <link>http://lorempixel.com/500/500/sports/</link>
+        <link>http://2.bp.blogspot.com/_FU9UCvCKHaQ/TBYL1pifkZI/AAAAAAAADR0/7crhQZ9qsJ0/s1600/l_fccf730fd0b94713bad70cb9b979bbea.jpg</link>
         <name>Product 2</name>
         <description>Product description</description>
     </product>
 
     <product>
-        <link>http://lorempixel.com/500/500/fashion/</link>
+        <link>https://c7.staticflickr.com/6/5200/14327667214_80e7598734_b.jpg</link>
         <name>Product 3</name>
         <description>Product description</description>
     </product>
     
     <product>
-        <link>http://lorempixel.com/500/500/nature/</link>
+        <link>http://vignette3.wikia.nocookie.net/thecornerclub/images/e/e1/Blast_500x500-1-.jpg/revision/latest?cb=20150213022400</link>
         <name>Product 4</name>
         <description>Product description</description>
     </product>                                                    

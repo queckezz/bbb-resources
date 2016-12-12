@@ -2,6 +2,7 @@
 **/nbproject/private/
 build/
 nbbuild/
+target/
 dist/
 nbdist/
 .nb-gradle/
@@ -15,8 +16,3 @@ nb-configuration.xml
 *.jar
 *.war
 *.ear
-/133/HelloWorldApp/target/
-/133/Sitzungsverfolgung/target/
-/133/Login/target/
-/133/Login_JDOM/target/
-/133/Samichlaus/target/

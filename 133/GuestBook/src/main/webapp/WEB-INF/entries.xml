@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entries>
+    <entry>
+        <id>0</id>
+        <title>Titel 1</title>
+        <createdAt>2016-12-12T14:30:00Z</createdAt>
+        <message>This is a message.</message>
+    </entry>
+    
+    <entry>
+        <id>1</id>
+        <title>Titel 2</title>
+        <createdAt>2016-12-12T15:30:00Z</createdAt>
+        <message>This is a message.</message>
+    </entry>
+    
+    <entry>
+        <id>2</id>
+        <title>Titel 3</title>
+        <createdAt>2016-06-12T07:00:00Z</createdAt>
+        <message>This is a message.</message>
+    </entry>
+</entries>

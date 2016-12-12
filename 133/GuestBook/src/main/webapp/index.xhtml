@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/tachyons@4.5.5/css/tachyons.min.css"/>
+        <title>GuestBook</title>
+    </head>
+    <body>
+        <div class='mw7 center'>
+            <h1 class='m0 mb4 mt3'>Guest Book</h1>
+            <h:form>
+                <div class='mb3'>
+                    <h:outputLabel class='db' value="Username"></h:outputLabel>
+                    <h:inputText class='db w-100 pa2 input-reset ba bg-transparent b--light-gray br1' value="#{loginBean.inputUsername}"></h:inputText>
+                </div>
+
+                <div class='mb3'>
+                    <h:outputLabel class    ='db' value="Password"></h:outputLabel>
+                    <h:inputSecret class='db w-100 pa2 input-reset ba bg-transparent b--light-gray br1' value="#{loginBean.inputPassword}"></h:inputSecret>
+                </div>
+                
+                <h:commandButton class='bg-blue pa2 bn white br1' value="Einloggen" action="#{loginBean.login}"></h:commandButton>
+            </h:form>
+        </div>
+    </body>
+</html>
